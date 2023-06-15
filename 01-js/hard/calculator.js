@@ -57,14 +57,19 @@ class Calculator {
 		return this.result;
 	}
 	calculate(string){
-    if (string.includes("/ 0")) {
-      throw new Error("Invalid Expression");
-  } else {
-      this.result = eval(string)
+    let b = eval(string)
+    if (b != "Infinity") {
+      this.result = b;
       return this.result;
+        
+    } 
+    else 
+    {    
+      throw new Error("Invalid Expression");
+    }
   }
-	}
 }
+
 
 
 module.exports = Calculator;
